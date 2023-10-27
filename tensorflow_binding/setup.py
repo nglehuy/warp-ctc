@@ -122,7 +122,8 @@ ext = setuptools.Extension('warpctc_tensorflow.kernels',
 
 class build_tf_ext(orig_build_ext):
     def build_extensions(self):
-        self.compiler.compiler_so.remove('-Wstrict-prototypes')
+        if '-Wstrict-prototypes' in self.compiler.compiler_so:
+            self.compiler.compiler_so.remove('-Wstrict-prototypes')
         orig_build_ext.build_extensions(self)
 
 def discover_test_suite():
