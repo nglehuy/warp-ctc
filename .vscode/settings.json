@@ -1,0 +1,6 @@
+{
+    "cmake.configureEnvironment": {
+        "CC": "/opt/homebrew/bin/gcc-13",
+        "CXX": "/opt/homebrew/bin/g++-13"
+    }
+}
