@@ -71,7 +71,7 @@ IF (CUDA_VERSION VERSION_LESS "11.0")
 ENDIF()
 
 # sm35 is deprecated after cuda 12.0
-IF (CUDA_VERSION VERSION_LESS "12.0")
+IF (NOT (CUDA_VERSION VERSION_GREATER "10.2"))
     set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -gencode arch=compute_35,code=sm_35")
 ENDIF()
 
